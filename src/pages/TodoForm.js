@@ -104,10 +104,7 @@ const selector = localStorage.getItem("selector") || []
               placeholder="Name"
             />
           </div>
-          {!taskInput?.length > 0 && (
-            <div className="text-[red] w-full">Name should not be epmty</div>
-          )}
-          {error && <div className="text-[red] w-full">{error}</div>}
+      
         </div>
         <div className=" w-full ">
           <p className="select-none ">Sectors:</p>
@@ -115,6 +112,7 @@ const selector = localStorage.getItem("selector") || []
             multiple={true}
             size="5"
             className=" outline-none border-2 w-full sm:w-[80%]"
+            required
             onChange={(e)=>{
               var options = e.target.options;
               var value = [];
@@ -141,6 +139,7 @@ const selector = localStorage.getItem("selector") || []
             id="checkbox"
             className="w-[15px] h-[15px]"
             onChange={(e) => setCheckbox(e.target.checked)}
+            required
           />
           <label htmlFor="checkbox" className="font-medium">
             Agree to terms
@@ -148,7 +147,6 @@ const selector = localStorage.getItem("selector") || []
         </div>
         <button
           type="submit"
-          disabled={!taskInput || error}
           className=" disabled:border-[red] disabled:text-red-400 disabled:bg-red-100 disabled:cursor-not-allowed  mb-3 w-full flex border-2 justify-center items-center py-2 hover:bg-stone-100 px-8 rounded-lg text-black  pointer-events-auto "
         >
           {!editId ? "Save" : "Update"}

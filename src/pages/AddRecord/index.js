@@ -10,35 +10,6 @@ function AddRecord() {
     setStoredTasks(storedTasks);
 
 
-const storeSelector=JSON.stringify([{
-  value:"Manufacturing",
-  label:"Manufacturing"
-},
-{
-  value:"Construction_materials",
-  label:"Construction materials"
-},
-{
-  value:"Electronics_and_Optics",
-  label:"Electronics and Optics"
-},
-{
-  value:"Food_and_Beverage",
-  label:"Food and Beverage"
-},
-{
-  value:"Bakery",
-  label:"Bakery"
-},
-{
-  value:"Fish",
-  label:"Fish"
-}
-])
-if(!localStorage.getItem("selector"))
-{
-localStorage.setItem("selector",storeSelector)
-}
 
   }, []);
   const removeTask = (index) => {
@@ -54,7 +25,7 @@ localStorage.setItem("selector",storeSelector)
         className=" cursor-pointer border-2 w-fit px-4 py-2 rounded mt-4"
         onClick={() => navigate("/form")}
       >
-        AddRecord
+        Add New Record
       </div>
       <div className="flex flex-col gap-2">
         {storedTasks?.map((task, indx) => (
