@@ -74,9 +74,9 @@ function AddRecord() {
                   {storedTasks?.filter((val) => val?.id == view )[0].termAgree ? "Agreed" : "Not Agree"}
                 </div>
 
-                <div className="flex justify-center items-center ">
+                <div className="flex justify-center items-center mt-8">
                 Selectors:{" "}
-                <div className="ml-8 mt-8">
+                <div className="ml-8 ">
                   {" "}{storedTasks?.filter((val) => val?.id == view )[0].selectors.map(v=><li>&nbsp;{v}</li>)}
                   </div>
                 </div>
