@@ -65,9 +65,20 @@ function AddRecord() {
                     X
                   </p>
                 </div>
-                <div className="flex justify-center items-center h-full -mt-8">
+                <div className="flex justify-center items-center mt-8">
                   Name:{" "}
-                  {storedTasks?.map((val) => val?.id == view && val?.text)}
+                  {storedTasks?.filter((val) => val?.id == view )[0].text}
+                </div>
+                <div className="flex justify-center items-center ">
+                  Term & conditiond:{" "}
+                  {storedTasks?.filter((val) => val?.id == view )[0].termAgree ? "Agreed" : "Not Agree"}
+                </div>
+
+                <div className="flex justify-center items-center ">
+                Selectors:{" "}
+                <div className="ml-8 mt-8">
+                  {" "}{storedTasks?.filter((val) => val?.id == view )[0].selectors.map(v=><li>&nbsp;{v}</li>)}
+                  </div>
                 </div>
               </div>
             </div>
